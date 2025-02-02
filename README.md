@@ -55,7 +55,7 @@ GitHub Pages URL for the site: [POS System](https://www.example.com)
 
 ### Design
 
-Figma Design File: [Figma POS System design file](https://www.example.com)
+[Figma POS System design file](https://www.example.com)
 
 ### Wireframes
 
