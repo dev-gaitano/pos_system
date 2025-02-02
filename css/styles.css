@@ -1,0 +1,10 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --font-size-base: 16px;
+}
