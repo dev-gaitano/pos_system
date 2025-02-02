@@ -59,13 +59,13 @@ Figma Design File: [Figma POS System design file](https://www.example.com)
 
 ### Wireframes
 
-Dashboard: [Dashboard wireframe](https://wireframe.cc/pH34k1)
+[Dashboard wireframe](https://wireframe.cc/pH34k1)
 
-New Invoice: [New Invoice wireframe](https://wireframe.cc/rzkpSo)
+[New Invoice wireframe](https://wireframe.cc/rzkpSo)
 
-Invoice List: [Invoice List wireframe](https://wireframe.cc/sEVtzE)
+[Invoice List wireframe](https://wireframe.cc/sEVtzE)
 
-Inventory: [Inventory wire frame](https://wireframe.cc/xfH3UD)
+[Inventory wire frame](https://wireframe.cc/xfH3UD)
 
 ## License
 
