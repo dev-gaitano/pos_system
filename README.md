@@ -28,8 +28,11 @@ Figma Design File: [Figma POS System design file](https://www.example.com)
 #### Wireframe links
 
 Dashboard: [Dashboard](https://www.example.com)
+
 New Invoice: [New Invoice](https://www.example.com)
+
 Invoice List: [Invoice List](https://www.example.com)
+
 Inventory: [Inventory](https://www.example.com)
 
 ## Follow these steps to set up the project locally:
