@@ -23,11 +23,11 @@ A Point of Sale (POS) system designed to streamline retail operations by managin
 
 GitHub Pages URL for the site: [POS System](https://www.example.com)
 
-#### Design
+### Design
 
 Figma Design File: [Figma POS System design file](https://www.example.com)
 
-#### Wireframes
+### Wireframes
 
 Dashboard: [Dashboard](https://wireframe.cc/pH34k1)
 
