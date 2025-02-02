@@ -4,6 +4,8 @@ Version 3, 29 June 2007
 
 Copyright © 2007 Free Software Foundation, Inc. <https://fsf.org/>
 
+Copyright © 2025 Eugene Campbell Gaitano. <dev.gaitano@gmail.com>
+
 Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.
 
 ## Preamble
