@@ -23,17 +23,19 @@ A Point of Sale (POS) system designed to streamline retail operations by managin
 
 GitHub Pages URL for the site: [POS System](https://www.example.com)
 
+#### Design
+
 Figma Design File: [Figma POS System design file](https://www.example.com)
 
-#### Wireframe links
+#### Wireframes
 
-Dashboard: [Dashboard](https://www.example.com)
+Dashboard: [Dashboard](https://wireframe.cc/pH34k1)
 
-New Invoice: [New Invoice](https://www.example.com)
+New Invoice: [New Invoice](https://wireframe.cc/rzkpSo)
 
-Invoice List: [Invoice List](https://www.example.com)
+Invoice List: [Invoice List](https://wireframe.cc/sEVtzE)
 
-Inventory: [Inventory](https://www.example.com)
+Inventory: [Inventory](https://wireframe.cc/xfH3UD)
 
 ## Follow these steps to set up the project locally:
 
