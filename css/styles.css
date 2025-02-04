@@ -8,6 +8,11 @@
   --secondary-color: #6c757d;
   --font-size-base: 16px;
 }
+.container {
+  background-image: url("/media/images/bg_gradient_1.jpeg");
+  background-size: cover;
+  display: flex;
+}
 .container_navbar {
   display: flex;
   flex-direction: column;
@@ -38,4 +43,13 @@
 }
 .container_navbar_user img {
   width: 64px;
+}
+.container_content {
+  /* border: 1px solid red; */
+  margin: 20px;
+  width: 1780px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.1); /* Semi transparent white bg */
+  backdrop-filter: blur(3px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
