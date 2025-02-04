@@ -8,3 +8,34 @@
   --secondary-color: #6c757d;
   --font-size-base: 16px;
 }
+.container_navbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  width: 100px;
+  background: #170202;
+  border-radius: 0px 40px 40px 0px;
+}
+.container_navbar_logo {
+  margin-top: 70px;
+}
+.container_navbar_logo img {
+  width: 100px;
+}
+.container_navbar_nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.nav_icon {
+  width: 44px;
+  height: 44px;
+}
+.container_navbar_user {
+  margin-bottom: 80px;
+}
+.container_navbar_user img {
+  width: 64px;
+}
