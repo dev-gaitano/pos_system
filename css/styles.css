@@ -37,12 +37,24 @@
 .nav_icon {
   width: 44px;
   height: 44px;
+  opacity: 0.4;
+  transition: all 0.8s;
+}
+.nav_icon:hover {
+  opacity: 1;
+  transform: scale(1.1);
 }
 .container_navbar_user {
   margin-bottom: 80px;
 }
 .container_navbar_user img {
   width: 64px;
+  opacity: 0.7;
+  transition: all 0.8s;
+}
+.container_navbar_user img:hover {
+  opacity: 1;
+  transform: scale(1.1);
 }
 .container_content {
   margin: 20px;
