@@ -21,7 +21,7 @@
   height: 100vh;
   width: 100px;
   background: #170202;
-  border-radius: 0px 40px 40px 0px;
+  border-radius: 0px 52px 52px 0px;
 }
 .container_navbar_logo {
   margin-top: 70px;
@@ -59,8 +59,76 @@
 .container_content {
   margin: 20px;
   width: 1780px;
-  border-radius: 32px;
+  border-radius: 52px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(3px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.container_content_header {
+  /* border: 1px solid red; */
+  height: 200px;
+}
+.container_content_body {
+  /* border: 1px solid red; */
+  height: 730px;
+  display: flex;
+}
+.container_content_body_left_top {
+  /* border: 1px solid red; */
+  height: 250px;
+  display: flex;
+}
+.container_content_body_left_top_userdata {
+  /* border: 1px solid red; */
+  height: 250px;
+  width: 500px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(3px);
+  margin: 0 20px;
+  transition: all 0.8s;
+}
+.container_content_body_left_top_userdata:hover {
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+.container_content_body_left_top_otherdata {
+  height: 250px;
+  width: 700px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(3px);
+  transition: all 0.8s;
+}
+.container_content_body_left_top_otherdata:hover {
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+.container_content_body_left_bottom {
+  height: 440px;
+  width: 1220px;
+  margin: 20px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(3px);
+  transition: all 0.8s;
+}
+.container_invoice_summary {
+  height: 400px;
+  width: 500px;
+  border-radius: 32px;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(3px);
+  transition: all 0.8s;
+}
+.container_low_inventory_alert {
+  height: 290px;
+  width: 500px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(3px);
+  transition: all 0.8s;
 }
