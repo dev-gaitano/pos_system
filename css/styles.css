@@ -311,3 +311,97 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transform: translateY(-5px);
 }
+#container_content_body_invoice_list {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 20px 0px 20px;
+}
+.container_content_body_top_inv1 {
+  display: flex;
+  justify-content: space-between;
+}
+.container_range_format_dropdown {
+  width: 200px;
+  height: 36px;
+  border-radius: 18px;
+  border: none;
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3px);
+  transition: all 0.8s;
+  padding: 0px 20px 0px 20px;
+}
+.container_range_format_dropdown:hover {
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.75);
+}
+.container_daterange_input_invl {
+  margin: 14px 0px 20px 0px;
+  display: flex;
+  gap: 10px;
+}
+.container_daterange_input_invl input {
+  width: 200px;
+  height: 36px;
+  border-radius: 18px;
+  background-color: rgb(255, 255, 255, 0);
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  padding: 0px 20px 0px 20px;
+  color: rgba(255, 255, 255, 0.35);
+  transition: all 0.8s;
+}
+.container_daterange_input_invl input:hover {
+  cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+.container_content_body_top_right_inv1 {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.container_content_body_top_right_inv1 button {
+  width: 150px;
+  height: 36px;
+  border-radius: 18px;
+  border: none;
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3px);
+  transition: all 0.8s;
+}
+.container_content_body_top_right_inv1 button:hover {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+.container_content_body_invoice_table {
+  height: 604px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(3px);
+  transition: all 0.8s;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.container_content_body_invoice_table:hover {
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+.container_content_body_invoice_table_title {
+  height: 50px;
+  border-radius: 32px 32px 0px 0px;
+  background: rgba(0, 0, 0, 0.404);
+  backdrop-filter: blur(3px);
+  transition: all 0.8s;
+}
