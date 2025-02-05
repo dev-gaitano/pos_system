@@ -71,13 +71,11 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 .container_content_header {
-  /* border: 1px solid red; */
   height: 200px;
   display: flex;
   justify-content: space-between;
 }
 .container_content_header_left {
-  /* border: 1px solid red; */
   height: 200px;
   display: flex;
   flex-direction: column;
@@ -94,7 +92,6 @@
   font-size: 28px;
 }
 .container_content_header_right {
-  /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -102,55 +99,59 @@
   padding: 20px;
 }
 .container_content_header_right_user {
-  /* border: 1px solid red; */
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   gap: 4px;
   border-radius: 28px;
   background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(3px);
   height: 56px;
   width: 100px;
+  transition: all 0.8s;
+}
+.container_content_header_right_user:hover {
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
 }
 .container_content_header_right_user img {
-  /* border: 1px solid red; */
   width: 44px;
   border-radius: 22px;
 }
 #dropdown_icon {
-  /* border: 1px solid red; */
   width: 32px;
 }
 .container_content_header_right_date {
-  /* border: 1px solid red; */
   margin-bottom: 10px;
   margin-right: 10px;
   font-weight: 700;
 }
 .container_content_body {
-  /* border: 1px solid red; */
   height: 730px;
   display: flex;
 }
 .container_content_body_left_top {
-  /* border: 1px solid red; */
   height: 250px;
   display: flex;
 }
 .container_content_body_left_top_userdata {
-  /* border: 1px solid red; */
   height: 250px;
   width: 500px;
   border-radius: 32px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin: 0 20px;
   transition: all 0.8s;
 }
 .container_content_body_left_top_userdata:hover {
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transform: translateY(-5px);
 }
 .container_content_body_left_top_otherdata {
@@ -159,11 +160,13 @@
   border-radius: 32px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.8s;
 }
 .container_content_body_left_top_otherdata:hover {
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transform: translateY(-5px);
 }
 .container_content_body_left_bottom {
@@ -173,11 +176,13 @@
   border-radius: 32px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.8s;
 }
 .container_content_body_left_bottom:hover {
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transform: translateY(-5px);
 }
 .container_invoice_summary {
@@ -188,11 +193,13 @@
   margin-right: 10px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.8s;
 }
 .container_invoice_summary:hover {
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transform: translateY(-5px);
 }
 .container_low_inventory_alert {
@@ -202,11 +209,13 @@
   margin-right: 10px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.8s;
 }
 .container_low_inventory_alert:hover {
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transform: translateY(-5px);
 }
 .container_content_body_clientinfo {
@@ -216,11 +225,13 @@
   border-radius: 32px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.8s;
 }
 .container_content_body_clientinfo:hover {
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transform: translateY(-5px);
 }
 .container_content_body_items {
@@ -230,11 +241,13 @@
   border-radius: 32px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.8s;
 }
 .container_content_body_items:hover {
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transform: translateY(-5px);
 }
 .container_content_body_left_bottom_nwinv {
@@ -247,11 +260,13 @@
   border-radius: 32px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.8s;
 }
 .container_content_body_additionalcosts:hover {
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transform: translateY(-5px);
 }
 .container_content_body_subtotal {
@@ -261,23 +276,27 @@
   border-radius: 32px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.8s;
 }
 .container_content_body_subtotal:hover {
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transform: translateY(-5px);
 }
 .container_content_body_printbtn button {
   width: 400px;
   height: 50px;
   border-radius: 25px;
-  border: none;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 1s;
 }
 .container_content_body_printbtn button:hover {
-  background-color: green;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: green;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transform: translateY(-5px);
   cursor: pointer;
   color: white;
@@ -290,11 +309,13 @@
   border-bottom-right-radius: 32px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.8s;
 }
 .container_content_body_receipt:hover {
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transform: translateY(-5px);
 }
 #receipt_preview {
@@ -304,11 +325,11 @@
   background: rgb(245, 245, 245);
   backdrop-filter: blur(3px);
   transition: all 1s;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 .container_content_body_receipt:hover #receipt_preview {
   background: rgb(255, 255, 255);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   transform: translateY(-5px);
 }
 #container_content_body_invoice_list {
