@@ -114,6 +114,7 @@
 }
 .container_content_header_right_user:hover {
   cursor: pointer;
+  background: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transform: translateY(-5px);
@@ -285,7 +286,7 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transform: translateY(-5px);
 }
-.container_content_body_printbtn button {
+.container_content_body_completebtn button {
   width: 400px;
   height: 50px;
   border-radius: 25px;
@@ -294,7 +295,7 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 1s;
 }
-.container_content_body_printbtn button:hover {
+.container_content_body_completebtn button:hover {
   background: green;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transform: translateY(-5px);
