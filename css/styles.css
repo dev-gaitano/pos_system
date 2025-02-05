@@ -135,7 +135,14 @@
   height: 730px;
   display: flex;
 }
-.container_content_body_left_top {
+.container_content_footer {
+  text-align: end;
+  padding-right: 30px;
+  position: absolute;
+  top: 930px;
+  right: 20px;
+}
+.container_content_body_left_top_dash {
   height: 250px;
   display: flex;
 }
