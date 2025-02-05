@@ -55,17 +55,17 @@ GitHub Pages URL for the site: [POS System](https://www.example.com)
 
 ### Design
 
-Figma Design File: [Figma POS System design file](https://www.example.com)
+[Figma POS System design file](https://www.figma.com/design/FgqtvmI3rXAn9Q4WZb5B0V/Untitled?node-id=0-1&t=dbBGKDO8zoE52mKF-1)
 
 ### Wireframes
 
-Dashboard: [Dashboard wireframe](https://wireframe.cc/pH34k1)
+[Dashboard wireframe](https://wireframe.cc/pH34k1)
 
-New Invoice: [New Invoice wireframe](https://wireframe.cc/rzkpSo)
+[New Invoice wireframe](https://wireframe.cc/rzkpSo)
 
-Invoice List: [Invoice List wireframe](https://wireframe.cc/sEVtzE)
+[Invoice List wireframe](https://wireframe.cc/sEVtzE)
 
-Inventory: [Inventory wire frame](https://wireframe.cc/xfH3UD)
+[Inventory wire frame](https://wireframe.cc/xfH3UD)
 
 ## License
 

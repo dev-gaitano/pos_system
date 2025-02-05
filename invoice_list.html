@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>POS System | Dashboard</title>
+    <title>POS System | Invoice list</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./css/styles.css" />
@@ -20,7 +20,6 @@
           <a href="index.html">
             <img
               class="nav_icon"
-              id="selected"
               src="./media/images/dashboard_icon.png"
               alt="dashboard_icon"
             />
@@ -35,6 +34,7 @@
           <a href="invoice_list.html">
             <img
               class="nav_icon"
+              id="selected"
               src="./media/images/invoice_list_icon.png"
               alt="invoice_list_icon"
             />
@@ -57,8 +57,7 @@
       <div class="container_content">
         <header class="container_content_header">
           <div class="container_content_header_left">
-            <h1>DASHBOARD</h1>
-            <h2>GOODMORNING, GAITANO!</h2>
+            <h1>INVOICE LIST</h1>
           </div>
 
           <div class="container_content_header_right">
@@ -75,22 +74,41 @@
               />
             </div>
             <div class="container_content_header_right_date">
-              <p>3<sup>rd</sup> Feb 2025 , 11:34</p>
+              <p>3<sup>rd</sup> Feb 2025 , 14:34</p>
             </div>
           </div>
         </header>
-
-        <main class="container_content_body">
-          <section class="container_content_body_left_dash">
-            <div class="container_content_body_left_top_dash">
-              <div class="container_content_body_left_top_userdata"></div>
-              <div class="container_content_body_left_top_otherdata"></div>
+        <main
+          class="container_content_body"
+          id="container_content_body_invoice_list"
+        >
+          <section class="container_content_body_top_inv1">
+            <div class="container_content_body_top_left_inv1">
+              <select class="container_range_format_dropdown">
+                <option value="">CUSTOM DATE</option>
+                <option value="">ALL TIME</option>
+                <option value="">FINANCIAL YEAR</option>
+                <option value="">YEARLY</option>
+                <option value="">QUATERLY</option>
+                <option value="">MONTHLY</option>
+                <option value="">WEEKLY</option>
+              </select>
+              <form class="container_daterange_input_invl">
+                <input
+                  type="date"
+                  id="date_from_input_invl"
+                  placeholder="From"
+                />
+                <input type="date" id="date_to_input_invl" placeholder="To" />
+              </form>
             </div>
-            <div class="container_content_body_left_bottom"></div>
+            <div class="container_content_body_top_right_inv1">
+              <button class="share_button">Share</button>
+              <button class="print_button">Print</button>
+            </div>
           </section>
-          <section class="container_content_body_right_dash">
-            <div class="container_invoice_summary"></div>
-            <div class="container_low_inventory_alert"></div>
+          <section class="container_content_body_invoice_table">
+            <div class="container_content_body_invoice_table_title"></div>
           </section>
         </main>
         <footer class="container_content_footer">
@@ -98,6 +116,5 @@
         </footer>
       </div>
     </div>
-    <script src="./js/script.js" async defer></script>
   </body>
 </html>
