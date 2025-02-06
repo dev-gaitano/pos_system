@@ -85,7 +85,23 @@
         >
           <section class="container_content_body_left">
             <div class="container_content_body_left_top_nwinv">
-              <div class="container_content_body_clientinfo"></div>
+              <form class="container_content_body_clientinfo">
+                <input
+                  type="text"
+                  placeholder="Client Name"
+                  id="client_name"
+                  required
+                />
+                <input type="text" placeholder="Organization" id="client_org" />
+                <input type="tel" placeholder="Phone" id="client_tel" />
+                <input type="email" placeholder="Email" id="client_email" />
+                <input
+                  type="number"
+                  placeholder="Address"
+                  id="client_address"
+                />
+                <input type="text" placeholder="Ship to" id="ship_to" />
+              </form>
               <div class="container_content_body_items"></div>
             </div>
             <div class="container_content_body_left_bottom_nwinv">
@@ -93,7 +109,9 @@
               <div class="container_content_body_left_bottom_right">
                 <div class="container_content_body_subtotal"></div>
                 <div class="container_content_body_completebtn">
-                  <button>COMPLETE ORDER</button>
+                  <button type="button" onclick="getClientInfo()">
+                    COMPLETE ORDER
+                  </button>
                 </div>
               </div>
             </div>
