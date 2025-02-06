@@ -258,6 +258,17 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transform: translateY(-5px);
 }
+.container_content_body_items_title {
+  height: 40px;
+  border-radius: 32px 32px 0px 0px;
+  background: rgba(0, 0, 0, 0.404);
+  backdrop-filter: blur(3px);
+  transition: all 0.8s;
+}
+#product_name_dropdown {
+  width: 200px;
+  margin: 20px;
+}
 .container_content_body_left_bottom_nwinv {
   display: flex;
 }
