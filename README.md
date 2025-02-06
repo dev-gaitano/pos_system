@@ -51,7 +51,7 @@ Open the `index.html` file in a web browser. No additional installations are req
 
 ## Links
 
-GitHub Pages URL for the site: [POS System](https://www.example.com)
+GitHub Pages URL for the site: [POS System](https://dev-gaitano.github.io/pos_system/)
 
 ### Design
 
