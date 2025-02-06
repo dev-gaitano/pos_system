@@ -159,6 +159,58 @@ const addNewItem = (event) => {
   });
 };
 
+// Additional Costs' class
+class AdditionalCosts {
+  constructor(costName, costPrice) {
+    this.costName = costName;
+    this.costPrice = costPrice;
+  }
+}
+
+// Additional Cost instances
+const additionalCosts = [
+  new AdditionalCosts("Transportation", 100),
+  new AdditionalCosts("Packaging", 50),
+];
+
+// Populate Additional Cost dropdown
+const populateAdditionalCostDropdown = () => {
+  const additionalCostDropdown = document.getElementById(
+    "additional_cost_dropdown"
+  );
+
+  // Clear existing options
+  additionalCostDropdown.innerHTML = "";
+
+  additionalCosts.forEach((cost) => {
+    const option = document.createElement("option");
+    option.value = cost.costName;
+    option.textContent = cost.costName;
+    additionalCostDropdown.appendChild(option);
+  });
+};
+
+// Calculate total cost of cost
+const calculateTotalAdditionalCost = () => {
+  const costQuantity = Number(document.getElementById("cost_quantity").value);
+  const costDropdown = document.getElementById("additional_cost_dropdown");
+  const selectedCostName = costDropdown.value;
+  const totalCostElement = document.getElementById("total_additional_cost");
+
+  const selectedCost = additionalCosts.find(
+    (cost) => cost.costName === selectedCostName
+  );
+
+  if (selectedCost) {
+    const totalAdditionalCost = costQuantity * selectedCost.price;
+
+    totalCostElement.innerHTML = `
+      <p>${totalAdditionalCost}</p>`;
+  } else {
+    totalCostElement.innerHTML = `<p>0</p>`;
+  }
+};
+
 // Ensure the DOM is fully loaded before running the script
 window.onload = () => {
   // Populate the dropdown when the DOM content is fully loaded
@@ -181,6 +233,16 @@ window.onload = () => {
   document
     .getElementById("add_item_icon")
     .addEventListener("click", addNewItem);
+
+  // Populate the Additional cost dropdown when the DOM content is fully loaded
+  populateAdditionalCostDropdown();
+
+  // Add event listener to calculate total additional cost when quantity is entered
+  document
+    .getElementById("cost_quantity")
+    .addEventListener("input", calculateTotalAdditionalCost);
+
+  document.getElementById("total_additional_cost").innerHTML = `<p>0</p>`;
 };
 
 // Add inputs to invoice list array, to their respective indices
