@@ -264,6 +264,12 @@
   background: rgba(0, 0, 0, 0.404);
   backdrop-filter: blur(3px);
   transition: all 0.8s;
+  display: flex;
+  padding: 0px 20px 0px 40px;
+  align-items: center;
+  gap: 58px;
+  justify-content: center;
+  font-weight: bold;
 }
 #item_cart {
   margin-top: 20px;
@@ -271,22 +277,45 @@
 .item_row {
   display: flex;
   margin: 10px 20px 10px 20px;
-  width: 908px;
+  width: 904px;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
 }
 .item_row p {
   width: 110px;
   text-align: center;
 }
+#cart_product_name {
+  width: 180px;
+  margin: 0px 20px 0px 0px;
+}
 #add_new_item_form {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 6px 0px 6px 0px;
+  background: rgba(255, 255, 255, 0.1);
 }
 #product_name_dropdown {
   width: 180px;
-  margin: 10px 20px 10px 20px;
+  margin: 0px 20px 0px 20px;
+  height: 32px;
+  border-radius: 18px;
+  border: none;
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3px);
+  transition: all 0.8s;
+  padding: 0px 20px 0px 20px;
+}
+#product_name_dropdown:hover {
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.75);
 }
 #product_details {
   display: flex;
@@ -301,6 +330,21 @@
   margin-right: 20px;
   width: 100px;
   text-align: center;
+  width: 110px;
+  height: 32px;
+  border-radius: 18px;
+  background: none;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  padding: 0px 20px 0px 20px;
+  color: rgba(255, 255, 255, 0.35);
+  transition: all 0.8s;
+}
+#product_quantity:hover {
+  cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
 }
 #total_cost {
   width: 100px;
@@ -313,6 +357,12 @@
 }
 #add_item_icon img {
   width: 32px;
+  opacity: 0.5;
+  transition: all 0.8s;
+}
+#add_item_icon:hover img {
+  cursor: pointer;
+  opacity: 1;
 }
 .container_content_body_left_bottom_nwinv {
   display: flex;

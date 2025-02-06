@@ -78,7 +78,12 @@ const displayProductDetails = () => {
       <p>${selectedProduct.openningStock}</p>
     `;
   } else {
-    productDetails.innerHTML = "";
+    productDetails.innerHTML = `
+      <p>0</p>
+      <p>0</p>
+      <p>0</p>
+      <p>0</p>
+    `;
   }
 };
 
@@ -116,16 +121,25 @@ const addNewItem = (event) => {
   const productQuantity = currentForm.querySelector("#product_quantity").value;
   const totalCost = currentForm.querySelector("#total_cost").innerText;
 
-  formValues.push({
-    productName: productDropdown.value,
-    quantity: productQuantity,
-    totalCost: totalCost,
-  });
+  const selectedProduct = products.find(
+    (product) => product.productName === productDropdown.value
+  );
+
+  if (selectedProduct) {
+    formValues.push({
+      productName: selectedProduct.productName,
+      productId: selectedProduct.productId,
+      price: selectedProduct.price,
+      currentStock: selectedProduct.currentStock,
+      openningStock: selectedProduct.openningStock,
+      quantity: productQuantity,
+      totalCost: totalCost,
+    });
+  }
 
   console.log(formValues);
 
-  // Clear existing options
-
+  // Clear existing rows
   itemCart.innerHTML = "";
 
   // Append each item in formValues as a row
@@ -133,9 +147,9 @@ const addNewItem = (event) => {
     const row = document.createElement("div");
     row.className = "item_row";
     row.innerHTML = `
-      <p>${product.productName}</p>
+      <p id="cart_product_name">${product.productName}</p>
       <p>${product.productId}</p>
-      <p>${product.price}</p>
+      <p>KES. ${product.price}</p>
       <p>${product.currentStock}</p>
       <p>${product.openningStock}</p>
       <p>${product.quantity}</p>
