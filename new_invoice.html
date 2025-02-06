@@ -86,21 +86,31 @@
           <section class="container_content_body_left">
             <div class="container_content_body_left_top_nwinv">
               <form class="container_content_body_clientinfo">
-                <input
-                  type="text"
-                  placeholder="Client Name"
-                  id="client_name"
-                  required
-                />
-                <input type="text" placeholder="Organization" id="client_org" />
-                <input type="tel" placeholder="Phone" id="client_tel" />
-                <input type="email" placeholder="Email" id="client_email" />
-                <input
-                  type="number"
-                  placeholder="Address"
-                  id="client_address"
-                />
-                <input type="text" placeholder="Ship to" id="ship_to" />
+                <div class="clientinfo_columns">
+                  <input
+                    type="text"
+                    placeholder="Client Name"
+                    id="client_name"
+                    required
+                  />
+                  <input
+                    type="text"
+                    placeholder="Organization"
+                    id="client_org"
+                  />
+                </div>
+                <div class="clientinfo_columns">
+                  <input type="tel" placeholder="Phone" id="client_tel" />
+                  <input type="email" placeholder="Email" id="client_email" />
+                </div>
+                <div class="clientinfo_columns">
+                  <input
+                    type="text"
+                    placeholder="Address"
+                    id="client_address"
+                  />
+                  <input type="text" placeholder="Ship to" id="ship_to" />
+                </div>
               </form>
               <div class="container_content_body_items">
                 <div class="container_content_body_items_title">
@@ -125,6 +135,7 @@
                     id="product_quantity"
                     placeholder="Quantity"
                     required
+                    min="1"
                   />
                   <div id="total_cost"></div>
                   <button id="add_item_icon">
