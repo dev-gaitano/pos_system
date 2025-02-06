@@ -149,28 +149,47 @@
               </div>
             </div>
             <div class="container_content_body_left_bottom_nwinv">
-              <div class="container_content_body_additionalcosts">
-                <div class="container_content_body_additionalcosts_title">
-                  <p>Cost Name</p>
-                  <p>Cost Price</p>
-                  <p>Quantity</p>
-                  <p>TOTAL</p>
+              <div class="container_content_body_left_bottom_left">
+                <div class="container_content_body_additionalcosts">
+                  <div class="container_content_body_additionalcosts_title">
+                    <p>Cost Name</p>
+                    <p>Cost Price</p>
+                    <p>Quantity</p>
+                    <p>TOTAL</p>
+                  </div>
+                  <form id="additionalcosts">
+                    <select
+                      name="additional_cost"
+                      id="additional_cost_dropdown"
+                    ></select>
+                    <div id="additional_cost_price"></div>
+                    <input
+                      type="number"
+                      placeholder="Quantity"
+                      id="cost_quantity"
+                    />
+                    <div id="total_additional_cost"></div>
+                  </form>
                 </div>
-                <form id="additionalcosts">
-                  <select
-                    name="additional_cost"
-                    id="additional_cost_dropdown"
-                  ></select>
-                  <div id="additional_cost_price"></div>
-                  <input
-                    type="number"
-                    placeholder="Quantity"
-                    id="cost_quantity"
-                  />
-                  <div id="total_additional_cost"></div>
-                </form>
+                <div class="container_content_body_discounts">
+                  <div class="container_content_body_discounts_title">
+                    <p>Dis. Name</p>
+                    <p>Dis. Price</p>
+                    <p>Quantity</p>
+                    <p>TOTAL</p>
+                  </div>
+                  <form id="discounts">
+                    <select name="discount" id="discount_dropdown"></select>
+                    <div id="discount_price"></div>
+                    <input
+                      type="number"
+                      placeholder="Quantity"
+                      id="cost_quantity"
+                    />
+                    <div id="total_discount"></div>
+                  </form>
+                </div>
               </div>
-
               <div class="container_content_body_left_bottom_right">
                 <div class="container_content_body_subtotal">
                   <div id="subtotal_titles">

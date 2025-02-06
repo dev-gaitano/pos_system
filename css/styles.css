@@ -397,8 +397,13 @@
 .container_content_body_left_bottom_nwinv {
   display: flex;
 }
+.container_content_body_left_bottom_left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 .container_content_body_additionalcosts {
-  height: 220px;
+  height: 100px;
   width: 580px;
   margin-right: 20px;
   border-radius: 32px;
@@ -413,16 +418,8 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transform: translateY(-5px);
 }
-#additionalcosts {
-  display: flex;
-  gap: 40px;
-  padding: 20px 40px;
-  margin: 0px 20px 0px 0px;
-  justify-content: center;
-  align-items: center;
-}
 .container_content_body_additionalcosts_title {
-  height: 40px;
+  height: 30px;
   border-radius: 32px 32px 0px 0px;
   background: rgba(0, 0, 0, 0.404);
   backdrop-filter: blur(3px);
@@ -433,6 +430,14 @@
   gap: 58px;
   justify-content: center;
   font-weight: bold;
+}
+#additionalcosts {
+  display: flex;
+  gap: 40px;
+  padding: 20px 40px;
+  margin: 0px 20px 0px 0px;
+  justify-content: center;
+  align-items: center;
 }
 #additional_cost_dropdown {
   width: 180px;
@@ -465,6 +470,80 @@
   color: rgba(255, 255, 255, 0.35);
 }
 #cost_quantity:hover {
+  cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+.container_content_body_discounts {
+  height: 100px;
+  width: 580px;
+  margin-right: 20px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.8s;
+}
+.container_content_body_discounts:hover {
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+.container_content_body_discounts_title {
+  height: 30px;
+  border-radius: 32px 32px 0px 0px;
+  background: rgba(0, 0, 0, 0.404);
+  backdrop-filter: blur(3px);
+  transition: all 0.8s;
+  display: flex;
+  padding: 0px 20px 0px 40px;
+  align-items: center;
+  gap: 58px;
+  justify-content: center;
+  font-weight: bold;
+}
+#discounts {
+  display: flex;
+  gap: 40px;
+  padding: 20px 40px;
+  margin: 0px 20px 0px 0px;
+  justify-content: center;
+  align-items: center;
+}
+#discount_dropdown {
+  width: 180px;
+  height: 32px;
+  border-radius: 18px;
+  border: none;
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3px);
+  transition: all 0.8s;
+  padding: 0px 20px 0px 20px;
+}
+#discount_price {
+  width: 110px;
+  text-align: center;
+}
+#discount_quantity {
+  margin-right: 20px;
+  width: 110px;
+  height: 32px;
+  text-align: center;
+  border-radius: 18px;
+  background: none;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  padding: 0px 20px 0px 20px;
+  transition: all 0.8s;
+}
+#discount_quantity::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+#discount_quantity:hover {
   cursor: pointer;
   border: 2px solid rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(10px);
