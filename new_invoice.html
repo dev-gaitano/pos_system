@@ -78,21 +78,139 @@
             </div>
           </div>
         </header>
+
         <main
           class="container_content_body"
           style="padding-right: 20px; padding-left: 20px"
         >
           <section class="container_content_body_left">
             <div class="container_content_body_left_top_nwinv">
-              <div class="container_content_body_clientinfo"></div>
-              <div class="container_content_body_items"></div>
+              <form class="container_content_body_clientinfo">
+                <div class="clientinfo_columns">
+                  <input
+                    type="text"
+                    placeholder="Client Name"
+                    id="client_name"
+                    required
+                  />
+                  <input
+                    type="text"
+                    placeholder="Organization"
+                    id="client_org"
+                  />
+                </div>
+                <div class="clientinfo_columns">
+                  <input type="tel" placeholder="Phone" id="client_tel" />
+                  <input type="email" placeholder="Email" id="client_email" />
+                </div>
+                <div class="clientinfo_columns">
+                  <input
+                    type="text"
+                    placeholder="Address"
+                    id="client_address"
+                  />
+                  <input type="text" placeholder="Ship to" id="ship_to" />
+                </div>
+              </form>
+              <div class="container_content_body_items">
+                <div class="container_content_body_items_title">
+                  <p>Product Name</p>
+                  <p>Product ID</p>
+                  <p>Price</p>
+                  <p>Current</p>
+                  <p>Opening</p>
+                  <p>Quantity</p>
+                  <p>TOTAL</p>
+                  <p>*add</p>
+                </div>
+                <div id="item_cart"></div>
+                <form id="add_new_item_form">
+                  <select
+                    name="product_name"
+                    id="product_name_dropdown"
+                  ></select>
+                  <div id="product_details"></div>
+                  <input
+                    type="number"
+                    id="product_quantity"
+                    placeholder="Quantity"
+                    required
+                    min="1"
+                  />
+                  <div id="total_cost"></div>
+                  <button id="add_item_icon">
+                    <img
+                      src="./media/images/add_shopping_item_icon.png"
+                      alt="add item icon"
+                    />
+                  </button>
+                </form>
+                <div id="form_container"></div>
+              </div>
             </div>
             <div class="container_content_body_left_bottom_nwinv">
-              <div class="container_content_body_additionalcosts"></div>
+              <div class="container_content_body_left_bottom_left">
+                <div class="container_content_body_additionalcosts">
+                  <div class="container_content_body_additionalcosts_title">
+                    <p>Cost Name</p>
+                    <p>Cost Price</p>
+                    <p>Quantity</p>
+                    <p>TOTAL</p>
+                  </div>
+                  <form id="additionalcosts">
+                    <select
+                      name="additional_cost"
+                      id="additional_cost_dropdown"
+                    ></select>
+                    <div id="additional_cost_price"></div>
+                    <input
+                      type="number"
+                      placeholder="Quantity"
+                      id="cost_quantity"
+                    />
+                    <div id="total_additional_cost"></div>
+                  </form>
+                </div>
+                <div class="container_content_body_discounts">
+                  <div class="container_content_body_discounts_title">
+                    <p>Dis. Name</p>
+                    <p>Dis. Price</p>
+                    <p>Quantity</p>
+                    <p>TOTAL</p>
+                  </div>
+                  <form id="discounts">
+                    <select name="discount" id="discount_dropdown"></select>
+                    <div id="discount_price"></div>
+                    <input
+                      type="number"
+                      placeholder="Quantity"
+                      id="discount_quantity"
+                    />
+                    <div id="total_discount"></div>
+                  </form>
+                </div>
+              </div>
               <div class="container_content_body_left_bottom_right">
-                <div class="container_content_body_subtotal"></div>
+                <div class="container_content_body_subtotal">
+                  <div id="subtotal_titles">
+                    <p>Total Item(s) Cost</p>
+                    <p>Total Additional Costs</p>
+                    <p>Total Discounts / Offers</p>
+                    <hr />
+                    <p id="subtotal_titles_total">SUB-TOTAL</p>
+                  </div>
+                  <div id="subtotal_values">
+                    <p id="total_items_cost">0</p>
+                    <p id="total_additional_costs">0</p>
+                    <p id="total_discounts_offers">0</p>
+                    <br />
+                    <p id="subtotal">0</p>
+                  </div>
+                </div>
                 <div class="container_content_body_completebtn">
-                  <button>COMPLETE ORDER</button>
+                  <button type="button" onclick="getClientInfo()">
+                    COMPLETE ORDER
+                  </button>
                 </div>
               </div>
             </div>
@@ -101,10 +219,12 @@
             <div id="receipt_preview"></div>
           </section>
         </main>
+
         <footer class="container_content_footer">
           <p>Copyright &copy; Eugene Gaitano</p>
         </footer>
       </div>
     </div>
+    <script src="./js/script.js" async defer></script>
   </body>
 </html>
