@@ -25,6 +25,7 @@ const getClientInfo = () => {
   );
 };
 
+// Products' class
 class Products {
   constructor(productName, productId, price, currentStock, openningStock) {
     this.productName = productName;
@@ -35,12 +36,16 @@ class Products {
   }
 }
 
+// Product instances
 const products = [
   new Products("Tea White", "A001", 30, 30, 30),
   new Products("Chapati White", "A002", 30, 60, 60),
   new Products("Chapati Brown", "A003", 30, 60, 60),
 ];
 
+const formValues = [];
+
+// Populate product dropdown
 const populateProductDropdown = () => {
   const productDropdown = document.getElementById("product_name_dropdown");
 
@@ -55,12 +60,11 @@ const populateProductDropdown = () => {
   });
 };
 
+// Display product details
 const displayProductDetails = () => {
   const productDropdown = document.getElementById("product_name_dropdown");
   const selectedProductName = productDropdown.value;
   const productDetails = document.getElementById("product_details");
-
-  console.log("Selected product:", selectedProductName); // Debugging log
 
   const selectedProduct = products.find(
     (product) => product.productName === selectedProductName
@@ -68,16 +72,77 @@ const displayProductDetails = () => {
 
   if (selectedProduct) {
     productDetails.innerHTML = `
-      <p>Product ID: ${selectedProduct.productId}</p>
-      <p>Price: ${selectedProduct.price}</p>
-      <p>Current Stock: ${selectedProduct.currentStock}</p>
-      <p>Opening Stock: ${selectedProduct.openningStock}</p>
+      <p>${selectedProduct.productId}</p>
+      <p>KES. ${selectedProduct.price}</p>
+      <p>${selectedProduct.currentStock}</p>
+      <p>${selectedProduct.openningStock}</p>
     `;
-    console.log("Product details displayed"); // Debugging log
   } else {
     productDetails.innerHTML = "";
-    console.log("No product selected"); // Debugging log
   }
+};
+
+// Calculate total cost of item
+const calculateTotalCost = () => {
+  const productQuantity = Number(
+    document.getElementById("product_quantity").value
+  );
+  const productDropdown = document.getElementById("product_name_dropdown");
+  const selectedProductName = productDropdown.value;
+  const totalCostElement = document.getElementById("total_cost");
+
+  const selectedProduct = products.find(
+    (product) => product.productName === selectedProductName
+  );
+
+  if (selectedProduct) {
+    const totalCost = productQuantity * selectedProduct.price;
+
+    totalCostElement.innerHTML = `
+      <p>${totalCost}</p>`;
+  } else {
+    totalCostElement.innerHTML = `<p>0</p>`;
+  }
+};
+
+// Add new item form
+const addNewItem = (event) => {
+  event.preventDefault();
+  const currentForm = document.getElementById("add_new_item_form");
+  const itemCart = document.getElementById("item_cart");
+
+  // Store current form values
+  const productDropdown = currentForm.querySelector("#product_name_dropdown");
+  const productQuantity = currentForm.querySelector("#product_quantity").value;
+  const totalCost = currentForm.querySelector("#total_cost").innerText;
+
+  formValues.push({
+    productName: productDropdown.value,
+    quantity: productQuantity,
+    totalCost: totalCost,
+  });
+
+  console.log(formValues);
+
+  // Clear existing options
+
+  itemCart.innerHTML = "";
+
+  // Append each item in formValues as a row
+  formValues.forEach((product) => {
+    const row = document.createElement("div");
+    row.className = "item_row";
+    row.innerHTML = `
+      <p>${product.productName}</p>
+      <p>${product.productId}</p>
+      <p>${product.price}</p>
+      <p>${product.currentStock}</p>
+      <p>${product.openningStock}</p>
+      <p>${product.quantity}</p>
+      <p>${product.totalCost}</p>
+    `;
+    itemCart.appendChild(row);
+  });
 };
 
 // Ensure the DOM is fully loaded before running the script
@@ -89,7 +154,21 @@ window.onload = () => {
   document
     .getElementById("product_name_dropdown")
     .addEventListener("change", displayProductDetails);
+
+  // Add event listener to calculate total cost when quantity is entered
+  document
+    .getElementById("product_quantity")
+    .addEventListener("input", calculateTotalCost);
+
+  // Initialize total cost to 0
+  document.getElementById("total_cost").innerHTML = `<p>0</p>`;
+
+  // Add event listener to add new item form when the button is clicked
+  document
+    .getElementById("add_item_icon")
+    .addEventListener("click", addNewItem);
 };
+
 // Add inputs to invoice list array, to their respective indices
 
 // Deduct quantity of items sold from inventory array

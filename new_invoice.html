@@ -104,13 +104,28 @@
               </form>
               <div class="container_content_body_items">
                 <div class="container_content_body_items_title"></div>
-                <form action="">
+                <div id="item_cart"></div>
+                <form id="add_new_item_form">
                   <select
                     name="product_name"
                     id="product_name_dropdown"
                   ></select>
                   <div id="product_details"></div>
+                  <input
+                    type="number"
+                    id="product_quantity"
+                    placeholder="Quantity"
+                    required
+                  />
+                  <div id="total_cost"></div>
+                  <button id="add_item_icon">
+                    <img
+                      src="./media/images/add_shopping_item_icon.png"
+                      alt="add item icon"
+                    />
+                  </button>
                 </form>
+                <div id="form_container"></div>
               </div>
             </div>
             <div class="container_content_body_left_bottom_nwinv">
