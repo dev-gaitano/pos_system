@@ -423,11 +423,23 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.8s;
+  padding: 20px;
 }
 .container_content_body_subtotal:hover {
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transform: translateY(-5px);
+}
+#subtotal_titles {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 60%;
+}
+#subtotal_titles_total {
+  font-weight: bold;
+  font-size: 18px;
 }
 .container_content_body_completebtn button {
   width: 400px;
