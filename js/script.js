@@ -108,6 +108,9 @@ const calculateTotalCost = () => {
   } else {
     totalCostElement.innerHTML = `<p>0</p>`;
   }
+
+  updateTotalItemsCost();
+  updateSubtotal();
 };
 
 // Add new item form
@@ -157,6 +160,9 @@ const addNewItem = (event) => {
     `;
     itemCart.appendChild(row);
   });
+
+  updateTotalItemsCost();
+  updateSubtotal();
 };
 
 // Additional Costs' class
@@ -231,6 +237,9 @@ const calculateTotalAdditionalCost = () => {
   } else {
     totalCostElement.innerHTML = `<p>0</p>`;
   }
+
+  updateTotalAdditionalCosts();
+  updateSubtotal();
 };
 
 // Discounts' class
@@ -296,14 +305,66 @@ const calculateTotalDiscount = () => {
   );
 
   if (selectedDiscount) {
-    const totalAdditionalCost =
-      discountQuantity * selectedDiscount.discountPrice;
+    const totalDiscountCost = discountQuantity * selectedDiscount.discountPrice;
 
     totalCostElement.innerHTML = `
-      <p>${totalAdditionalCost}</p>`;
+      <p>${totalDiscountCost}</p>`;
   } else {
     totalCostElement.innerHTML = `<p>0</p>`;
   }
+
+  updateTotalDiscountsOffers();
+  updateSubtotal();
+};
+
+// Update total item cost
+const updateTotalItemsCost = () => {
+  const totalItemsCostElement = document.getElementById("total_items_cost");
+  const totalItemsCost = formValues.reduce(
+    (total, item) => total + Number(item.totalCost),
+    0
+  );
+  totalItemsCostElement.innerHTML = totalItemsCost;
+};
+
+// Update total additional costs
+const updateTotalAdditionalCosts = () => {
+  const totalAdditionalCostsElement = document.getElementById(
+    "total_additional_costs"
+  );
+  const totalAdditionalCosts = additionalCosts.reduce(
+    (total, cost) => total + cost.costPrice,
+    0
+  );
+  totalAdditionalCostsElement.innerHTML = totalAdditionalCosts;
+};
+
+// Update total discounts/offers
+const updateTotalDiscountsOffers = () => {
+  const totalDiscountsOffersElement = document.getElementById(
+    "total_discounts_offers"
+  );
+  const totalDiscountsOffers = discounts.reduce(
+    (total, discount) => total + discount.discountPrice,
+    0
+  );
+  totalDiscountsOffersElement.innerHTML = totalDiscountsOffers;
+};
+
+// Update subtotal
+const updateSubtotal = () => {
+  const totalItemsCost = Number(
+    document.getElementById("total_items_cost").innerText
+  );
+  const totalAdditionalCosts = Number(
+    document.getElementById("total_additional_costs").innerText
+  );
+  const totalDiscountsOffers = Number(
+    document.getElementById("total_discounts_offers").innerText
+  );
+  const subtotalElement = document.getElementById("subtotal");
+  const subtotal = totalItemsCost + totalAdditionalCosts - totalDiscountsOffers;
+  subtotalElement.innerHTML = subtotal;
 };
 
 // Ensure the DOM is fully loaded before running the script
@@ -361,12 +422,18 @@ window.onload = () => {
 
   document.getElementById("discount_price").innerHTML = `<p>0</p>`;
 
-  // Add event listener to calculate total additional cost when quantity is entered
+  // Add event listener to calculate total discount cost when quantity is entered
   document
     .getElementById("discount_quantity")
-    .addEventListener("input", calculateTotalAdditionalCost);
+    .addEventListener("input", calculateTotalDiscount);
 
   document.getElementById("total_discount").innerHTML = `<p>0</p>`;
+
+  // Initialize total item cost, additional costs, discounts/offers, and subtotal to 0
+  document.getElementById("total_items_cost").innerHTML = `0`;
+  document.getElementById("total_additional_costs").innerHTML = `0`;
+  document.getElementById("total_discounts_offers").innerHTML = `0`;
+  document.getElementById("subtotal").innerHTML = `0`;
 };
 
 // Add inputs to invoice list array, to their respective indices

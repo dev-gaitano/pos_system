@@ -575,6 +575,7 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.8s;
   padding: 20px;
+  display: flex;
 }
 .container_content_body_subtotal:hover {
   backdrop-filter: blur(10px);
@@ -589,6 +590,19 @@
   width: 60%;
 }
 #subtotal_titles_total {
+  font-weight: bold;
+  font-size: 18px;
+}
+#subtotal_values {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-right: 50px;
+  height: 100%;
+  width: 40%;
+}
+#subtotal {
   font-weight: bold;
   font-size: 18px;
 }
