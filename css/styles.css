@@ -451,6 +451,13 @@
   transition: all 0.8s;
   padding: 0px 20px 0px 20px;
 }
+#additional_cost_dropdown:hover {
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.75);
+}
 #additional_cost_price {
   width: 110px;
   text-align: center;
@@ -524,6 +531,13 @@
   backdrop-filter: blur(3px);
   transition: all 0.8s;
   padding: 0px 20px 0px 20px;
+}
+#discount_dropdown:hover {
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.75);
 }
 #discount_price {
   width: 110px;

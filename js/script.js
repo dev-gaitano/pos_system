@@ -233,6 +233,79 @@ const calculateTotalAdditionalCost = () => {
   }
 };
 
+// Discounts' class
+class Discounts {
+  constructor(discountName, discountPrice) {
+    this.discountName = discountName;
+    this.discountPrice = discountPrice;
+  }
+}
+
+// discount instances
+const discounts = [
+  new Discounts("Good will", 100),
+  new Discounts("Credit", 50),
+];
+
+// Populate discount dropdown
+const populateDiscountDropdown = () => {
+  const discountDropdown = document.getElementById("discount_dropdown");
+
+  // Clear existing options
+  discountDropdown.innerHTML = "";
+
+  discounts.forEach((discount) => {
+    const option = document.createElement("option");
+    option.value = discount.discountName;
+    option.textContent = discount.discountName;
+    discountDropdown.appendChild(option);
+  });
+};
+
+const displayDiscountPrice = () => {
+  const discountDropdown = document.getElementById("discount_dropdown");
+  const selectedDiscountName = discountDropdown.value;
+  const discountPrice = document.getElementById("discount_price");
+
+  const selectedDiscount = discounts.find(
+    (discount) => discount.discountName === selectedDiscountName
+  );
+
+  if (selectedDiscount) {
+    discountPrice.innerHTML = `
+      <p>${selectedDiscount.discountPrice}</p>
+    `;
+  } else {
+    discountPrice.innerHTML = `
+      <p>0</p>
+    `;
+  }
+};
+
+// Calculate total cost of discount
+const calculateTotalDiscount = () => {
+  const discountQuantity = Number(
+    document.getElementById("discount_quantity").value
+  );
+  const discountDropdown = document.getElementById("discount_dropdown");
+  const selectedDiscountName = discountDropdown.value;
+  const totalCostElement = document.getElementById("total_discount");
+
+  const selectedDiscount = discounts.find(
+    (discount) => discount.discountName === selectedDiscountName
+  );
+
+  if (selectedDiscount) {
+    const totalAdditionalCost =
+      discountQuantity * selectedDiscount.discountPrice;
+
+    totalCostElement.innerHTML = `
+      <p>${totalAdditionalCost}</p>`;
+  } else {
+    totalCostElement.innerHTML = `<p>0</p>`;
+  }
+};
+
 // Ensure the DOM is fully loaded before running the script
 window.onload = () => {
   // Populate the dropdown when the DOM content is fully loaded
@@ -277,6 +350,23 @@ window.onload = () => {
     .addEventListener("input", calculateTotalAdditionalCost);
 
   document.getElementById("total_additional_cost").innerHTML = `<p>0</p>`;
+
+  // Populate the Discount dropdown when the DOM content is fully loaded
+  populateDiscountDropdown();
+
+  // Add event listener to display cost price when an option is selected
+  document
+    .getElementById("discount_dropdown")
+    .addEventListener("change", displayDiscountPrice);
+
+  document.getElementById("discount_price").innerHTML = `<p>0</p>`;
+
+  // Add event listener to calculate total additional cost when quantity is entered
+  document
+    .getElementById("discount_quantity")
+    .addEventListener("input", calculateTotalAdditionalCost);
+
+  document.getElementById("total_discount").innerHTML = `<p>0</p>`;
 };
 
 // Add inputs to invoice list array, to their respective indices
