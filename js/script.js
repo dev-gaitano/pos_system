@@ -149,7 +149,7 @@ const addNewItem = (event) => {
     row.innerHTML = `
       <p id="cart_product_name">${product.productName}</p>
       <p>${product.productId}</p>
-      <p>KES. ${product.price}</p>
+      <p>${product.price}</p>
       <p>${product.currentStock}</p>
       <p>${product.openningStock}</p>
       <p>${product.quantity}</p>
@@ -190,7 +190,29 @@ const populateAdditionalCostDropdown = () => {
   });
 };
 
-// Calculate total cost of cost
+const displayCostPrice = () => {
+  const additionalCostDropdown = document.getElementById(
+    "additional_cost_dropdown"
+  );
+  const selectedCostName = additionalCostDropdown.value;
+  const additionalCostPrice = document.getElementById("additional_cost_price");
+
+  const selectedCost = additionalCosts.find(
+    (cost) => cost.costName === selectedCostName
+  );
+
+  if (selectedCost) {
+    additionalCostPrice.innerHTML = `
+      <p>${selectedCost.costPrice}</p>
+    `;
+  } else {
+    additionalCostPrice.innerHTML = `
+      <p>0</p>
+    `;
+  }
+};
+
+// Calculate total cost of additional cost
 const calculateTotalAdditionalCost = () => {
   const costQuantity = Number(document.getElementById("cost_quantity").value);
   const costDropdown = document.getElementById("additional_cost_dropdown");
@@ -202,7 +224,7 @@ const calculateTotalAdditionalCost = () => {
   );
 
   if (selectedCost) {
-    const totalAdditionalCost = costQuantity * selectedCost.price;
+    const totalAdditionalCost = costQuantity * selectedCost.costPrice;
 
     totalCostElement.innerHTML = `
       <p>${totalAdditionalCost}</p>`;
@@ -221,6 +243,11 @@ window.onload = () => {
     .getElementById("product_name_dropdown")
     .addEventListener("change", displayProductDetails);
 
+  document.getElementById("product_details").innerHTML = `<p>0</p>
+  <p>0</p>
+  <p>0</p>
+  <p>0</p>`;
+
   // Add event listener to calculate total cost when quantity is entered
   document
     .getElementById("product_quantity")
@@ -236,6 +263,13 @@ window.onload = () => {
 
   // Populate the Additional cost dropdown when the DOM content is fully loaded
   populateAdditionalCostDropdown();
+
+  // Add event listener to display cost price when an option is selected
+  document
+    .getElementById("additional_cost_dropdown")
+    .addEventListener("change", displayCostPrice);
+
+  document.getElementById("additional_cost_price").innerHTML = `<p>0</p>`;
 
   // Add event listener to calculate total additional cost when quantity is entered
   document
