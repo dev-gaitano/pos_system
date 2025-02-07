@@ -89,7 +89,7 @@
                 <div class="clientinfo_columns">
                   <input
                     type="text"
-                    placeholder="Client Name"
+                    placeholder="Client Name*"
                     id="client_name"
                     required
                   />
@@ -231,12 +231,19 @@
               <div id="receipt_preview_sub_header">
                 <p>ORDER NUMBER : #000</p>
                 <p>DATE : 3<sup>rd</sup> Feb 2025 , 14:34</p>
-                <p>ORDER FOR : John Doe</p>
+                <p id="order_for">ORDER FOR : John Doe</p>
               </div>
               <div class="receipt_break">
                 <p>
                   ----------------------------------------------------------------------------------------------------------------------------
                 </p>
+              </div>
+              <div id="receipt_item_header">
+                <p>Product Name</p>
+                <p>Product ID</p>
+                <p>Price</p>
+                <p>Qty</p>
+                <p>TOTAL</p>
               </div>
               <div id="receipt_preview_items"></div>
               <div class="receipt_break">
@@ -244,10 +251,19 @@
                   ----------------------------------------------------------------------------------------------------------------------------
                 </p>
               </div>
-              <div>
-                <p>Additional Costs :</p>
-                <p>Discounts / Offers :</p>
-                <p>TOTAL :</p>
+              <div id="receipt_preview_subtotal">
+                <div>
+                  <p>Totat Items Cost :</p>
+                  <p>Additional Costs :</p>
+                  <p>Discounts / Offers :</p>
+                  <p>TOTAL :</p>
+                </div>
+                <div id="receipt_preview_subtotal_values">
+                  <p id="receipt_preview_total_items_cost">0</p>
+                  <p id="receipt_preview_total_additional_costs">0</p>
+                  <p id="receipt_preview_total_discounts_offers">0</p>
+                  <p id="receipt_preview_subtotal_value">0</p>
+                </div>
               </div>
               <div class="receipt_break">
                 <p>

@@ -118,6 +118,7 @@ const addNewItem = (event) => {
   event.preventDefault();
   const currentForm = document.getElementById("add_new_item_form");
   const itemCart = document.getElementById("item_cart");
+  const receiptItemCart = document.getElementById("receipt_preview_items");
 
   // Store current form values
   const productDropdown = currentForm.querySelector("#product_name_dropdown");
@@ -159,6 +160,23 @@ const addNewItem = (event) => {
       <p>${product.totalCost}</p>
     `;
     itemCart.appendChild(row);
+  });
+
+  // Clear existing rows
+  receiptItemCart.innerHTML = "";
+
+  // Append each item in formValues as a row
+  formValues.forEach((product) => {
+    const receiptRow = document.createElement("div");
+    receiptRow.className = "receipt_item_row";
+    receiptRow.innerHTML = `
+      <p>${product.productName}</p>
+      <p>${product.productId}</p>
+      <p>${product.price}</p>
+      <p>${product.quantity}</p>
+      <p>${product.totalCost}</p>
+    `;
+    receiptItemCart.appendChild(receiptRow);
   });
 
   updateTotalItemsCost();
@@ -320,11 +338,15 @@ const calculateTotalDiscount = () => {
 // Update total item cost
 const updateTotalItemsCost = () => {
   const totalItemsCostElement = document.getElementById("total_items_cost");
+  const receiptPreviewTotalItemsCostElement = document.getElementById(
+    "receipt_preview_total_items_cost"
+  );
   const totalItemsCost = formValues.reduce(
     (total, item) => total + Number(item.totalCost),
     0
   );
   totalItemsCostElement.innerHTML = totalItemsCost;
+  receiptPreviewTotalItemsCostElement.innerHTML = totalItemsCost;
 };
 
 // Update total additional costs
@@ -332,11 +354,15 @@ const updateTotalAdditionalCosts = () => {
   const totalAdditionalCostsElement = document.getElementById(
     "total_additional_costs"
   );
+  const receiptPreviewTotalAdditionalCostsElement = document.getElementById(
+    "receipt_preview_total_additional_costs"
+  );
   const totalAdditionalCosts = additionalCosts.reduce(
     (total, cost) => total + cost.costPrice,
     0
   );
   totalAdditionalCostsElement.innerHTML = totalAdditionalCosts;
+  receiptPreviewTotalAdditionalCostsElement.innerHTML = totalAdditionalCosts;
 };
 
 // Update total discounts/offers
@@ -344,11 +370,15 @@ const updateTotalDiscountsOffers = () => {
   const totalDiscountsOffersElement = document.getElementById(
     "total_discounts_offers"
   );
+  const receiptPreviewTotalDiscountsOffersElement = document.getElementById(
+    "receipt_preview_total_discounts_offers"
+  );
   const totalDiscountsOffers = discounts.reduce(
     (total, discount) => total + discount.discountPrice,
     0
   );
   totalDiscountsOffersElement.innerHTML = totalDiscountsOffers;
+  receiptPreviewTotalDiscountsOffersElement.innerHTML = totalDiscountsOffers;
 };
 
 // Update subtotal
@@ -365,6 +395,32 @@ const updateSubtotal = () => {
   const subtotalElement = document.getElementById("subtotal");
   const subtotal = totalItemsCost + totalAdditionalCosts - totalDiscountsOffers;
   subtotalElement.innerHTML = subtotal;
+
+  const receiptPreviewTotalItemsCost = Number(
+    document.getElementById("receipt_preview_total_items_cost").innerText
+  );
+  const receiptPreviewTotalAdditionalCosts = Number(
+    document.getElementById("receipt_preview_total_additional_costs").innerText
+  );
+  const receiptPreviewTotalDiscountsOffers = Number(
+    document.getElementById("receipt_preview_total_discounts_offers").innerText
+  );
+  const receiptPreviewSubtotalElement = document.getElementById(
+    "receipt_preview_subtotal_value"
+  );
+  const receiptPreviewSubtotal =
+    receiptPreviewTotalItemsCost +
+    receiptPreviewTotalAdditionalCosts -
+    receiptPreviewTotalDiscountsOffers;
+  receiptPreviewSubtotalElement.innerHTML = receiptPreviewSubtotal;
+};
+
+const receiptHeader = () => {
+  const clientName = document.querySelector("#client_name").value;
+
+  const orderForElement = document.getElementById("order_for");
+
+  orderForElement.innerHTML = `ORDER FOR : ${clientName}`;
 };
 
 // Ensure the DOM is fully loaded before running the script
@@ -434,6 +490,13 @@ window.onload = () => {
   document.getElementById("total_additional_costs").innerHTML = `0`;
   document.getElementById("total_discounts_offers").innerHTML = `0`;
   document.getElementById("subtotal").innerHTML = `0`;
+
+  // Add event listener to calculate total discount cost when quantity is entered
+  document
+    .getElementById("client_name")
+    .addEventListener("input", receiptHeader);
+
+  document.getElementById("order_for").innerHTML = `ORDER FOR : `;
 };
 
 // Add inputs to invoice list array, to their respective indices

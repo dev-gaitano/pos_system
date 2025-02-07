@@ -668,6 +668,33 @@
   width: 100%;
   margin-top: 24px;
 }
+#receipt_preview_items {
+  display: flex;
+  flex-direction: column;
+}
+#receipt_item_header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-right: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+.receipt_item_row {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-right: 20px;
+}
+#receipt_preview_subtotal {
+  display: flex;
+  justify-content: space-between;
+}
+#receipt_preview_subtotal_values {
+  padding-right: 20px;
+  text-align: right;
+}
 #receipt_preview_footer {
   width: 100%;
   text-align: center;
