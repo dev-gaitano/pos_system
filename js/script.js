@@ -41,6 +41,12 @@ const products = [
   new Products("Tea White", "A001", 30, 30, 30),
   new Products("Chapati White", "A002", 30, 60, 60),
   new Products("Chapati Brown", "A003", 30, 60, 60),
+  new Products("Mandazi", "A004", 20, 30, 30),
+  new Products("Peas Stew", "A005", 100, 50, 50),
+  new Products("Beef Stew", "A005", 150, 20, 20),
+  new Products("Veg Rice", "A006", 100, 30, 30),
+  new Products("Beef Smokie", "A007", 50, 100, 100),
+  new Products("Chicken Smokie", "A008", 50, 100, 100),
 ];
 
 const formValues = [];
