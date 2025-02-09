@@ -1,30 +1,3 @@
-// Listen for user completes order
-
-// Dislay payment pop-up
-
-// Process and confirm the payment
-
-// Submit new invoice data
-
-// Get inputs from new invoice recorded
-const getClientInfo = () => {
-  const clientName = document.querySelector("#client_name").value;
-  const clientOrganization = document.querySelector("#client_org").value;
-  const clientPhone = document.querySelector("#client_tel").value;
-  const clientEmail = document.querySelector("#client_email").value;
-  const clientAddress = document.querySelector("#client_address").value;
-  const shipTo = document.querySelector("#ship_to").value;
-
-  console.log(
-    clientName,
-    clientOrganization,
-    clientPhone,
-    clientEmail,
-    clientAddress,
-    shipTo
-  );
-};
-
 // Products' class
 class Products {
   constructor(productName, productId, price, currentStock, openningStock) {
@@ -149,6 +122,7 @@ const addNewItem = (event) => {
 
   console.log(formValues);
 
+  // Display cart item in item cart container
   // Clear existing rows
   itemCart.innerHTML = "";
 
@@ -158,16 +132,17 @@ const addNewItem = (event) => {
     row.className = "item_row";
     row.innerHTML = `
       <p id="cart_product_name">${product.productName}</p>
-      <p>${product.productId}</p>
-      <p>${product.price}</p>
-      <p>${product.currentStock}</p>
-      <p>${product.openningStock}</p>
-      <p>${product.quantity}</p>
-      <p>${product.totalCost}</p>
+      <p id="cart_product_product_id">${product.productId}</p>
+      <p id="cart_product_price">${product.price}</p>
+      <p id="cart_product_current_stock">${product.currentStock}</p>
+      <p id="cart_product_openning_stock">${product.openningStock}</p>
+      <p id="cart_product_quantity">${product.quantity}</p>
+      <p id="cart_product_total">${product.totalCost}</p>
     `;
     itemCart.appendChild(row);
   });
 
+  // Display cart item on receipt preview
   // Clear existing rows
   receiptItemCart.innerHTML = "";
 
@@ -176,7 +151,7 @@ const addNewItem = (event) => {
     const receiptRow = document.createElement("div");
     receiptRow.className = "receipt_item_row";
     receiptRow.innerHTML = `
-      <p>${product.productName}</p>
+      <p id="receipt_item_name">${product.productName}</p>
       <p>${product.productId}</p>
       <p>${product.price}</p>
       <p>${product.quantity}</p>
@@ -505,7 +480,34 @@ window.onload = () => {
   document.getElementById("order_for").innerHTML = `ORDER FOR : `;
 };
 
-// Add inputs to invoice list array, to their respective indices
+// Listen for user completes order
+
+// Dislay payment pop-up
+
+// Process and confirm the payment
+
+// Get inputs from new invoice recorded (invoice Data)
+const getClientInfo = () => {
+  const clientName = document.querySelector("#client_name").value;
+  const clientOrganization = document.querySelector("#client_org").value;
+  const clientPhone = document.querySelector("#client_tel").value;
+  const clientEmail = document.querySelector("#client_email").value;
+  const clientAddress = document.querySelector("#client_address").value;
+  const shipTo = document.querySelector("#ship_to").value;
+
+  console.log(
+    clientName,
+    clientOrganization,
+    clientPhone,
+    clientEmail,
+    clientAddress,
+    shipTo
+  );
+};
+
+// Submit new invoice data
+
+// Add invoice data to invoice list array, to their respective indices
 
 // Deduct quantity of items sold from inventory array
 

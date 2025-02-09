@@ -6,7 +6,7 @@
 }
 :root {
   --primary-color: #007bff;
-  --secondary-color: #6c757d;
+  --secondary-color: rgba(255, 255, 255, 0.35);
   --font-size-base: 16px;
 }
 .container {
@@ -686,6 +686,12 @@
   width: 100%;
   justify-content: space-between;
   padding-right: 20px;
+}
+.receipt_item_row p {
+  width: 10px;
+}
+#receipt_item_name {
+  width: 96px;
 }
 #receipt_preview_subtotal {
   display: flex;
