@@ -176,7 +176,7 @@ const addNewItem = (event) => {
     const receiptRow = document.createElement("div");
     receiptRow.className = "receipt_item_row";
     receiptRow.innerHTML = `
-      <p>${product.productName}</p>
+      <p id="receipt_item_name">${product.productName}</p>
       <p>${product.productId}</p>
       <p>${product.price}</p>
       <p>${product.quantity}</p>

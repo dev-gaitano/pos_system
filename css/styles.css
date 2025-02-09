@@ -687,6 +687,12 @@
   justify-content: space-between;
   padding-right: 20px;
 }
+.receipt_item_row p {
+  width: 10px;
+}
+#receipt_item_name {
+  width: 90px;
+}
 #receipt_preview_subtotal {
   display: flex;
   justify-content: space-between;
