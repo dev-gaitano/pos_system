@@ -1,30 +1,3 @@
-// Listen for user completes order
-
-// Dislay payment pop-up
-
-// Process and confirm the payment
-
-// Submit new invoice data
-
-// Get inputs from new invoice recorded
-const getClientInfo = () => {
-  const clientName = document.querySelector("#client_name").value;
-  const clientOrganization = document.querySelector("#client_org").value;
-  const clientPhone = document.querySelector("#client_tel").value;
-  const clientEmail = document.querySelector("#client_email").value;
-  const clientAddress = document.querySelector("#client_address").value;
-  const shipTo = document.querySelector("#ship_to").value;
-
-  console.log(
-    clientName,
-    clientOrganization,
-    clientPhone,
-    clientEmail,
-    clientAddress,
-    shipTo
-  );
-};
-
 // Products' class
 class Products {
   constructor(productName, productId, price, currentStock, openningStock) {
@@ -505,7 +478,34 @@ window.onload = () => {
   document.getElementById("order_for").innerHTML = `ORDER FOR : `;
 };
 
-// Add inputs to invoice list array, to their respective indices
+// Listen for user completes order
+
+// Dislay payment pop-up
+
+// Process and confirm the payment
+
+// Get inputs from new invoice recorded (invoice Data)
+const getClientInfo = () => {
+  const clientName = document.querySelector("#client_name").value;
+  const clientOrganization = document.querySelector("#client_org").value;
+  const clientPhone = document.querySelector("#client_tel").value;
+  const clientEmail = document.querySelector("#client_email").value;
+  const clientAddress = document.querySelector("#client_address").value;
+  const shipTo = document.querySelector("#ship_to").value;
+
+  console.log(
+    clientName,
+    clientOrganization,
+    clientPhone,
+    clientEmail,
+    clientAddress,
+    shipTo
+  );
+};
+
+// Submit new invoice data
+
+// Add invoice data to invoice list array, to their respective indices
 
 // Deduct quantity of items sold from inventory array
 
