@@ -122,6 +122,7 @@ const addNewItem = (event) => {
 
   console.log(formValues);
 
+  // Display cart item in item cart container
   // Clear existing rows
   itemCart.innerHTML = "";
 
@@ -131,16 +132,17 @@ const addNewItem = (event) => {
     row.className = "item_row";
     row.innerHTML = `
       <p id="cart_product_name">${product.productName}</p>
-      <p>${product.productId}</p>
-      <p>${product.price}</p>
-      <p>${product.currentStock}</p>
-      <p>${product.openningStock}</p>
-      <p>${product.quantity}</p>
-      <p>${product.totalCost}</p>
+      <p id="cart_product_product_id">${product.productId}</p>
+      <p id="cart_product_price">${product.price}</p>
+      <p id="cart_product_current_stock">${product.currentStock}</p>
+      <p id="cart_product_openning_stock">${product.openningStock}</p>
+      <p id="cart_product_quantity">${product.quantity}</p>
+      <p id="cart_product_total">${product.totalCost}</p>
     `;
     itemCart.appendChild(row);
   });
 
+  // Display cart item on receipt preview
   // Clear existing rows
   receiptItemCart.innerHTML = "";
 
